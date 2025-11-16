@@ -1,7 +1,8 @@
 import os
 import requests
 
-HUBSPOT_API_KEY = os.getenv("HUBSPOT_API_KEY")
+import streamlit as st
+HUBSPOT_API_KEY = st.secrets["HUBSPOT_API_KEY"]
 BASE = "https://api.hubapi.com"
 
 HEADERS = {
