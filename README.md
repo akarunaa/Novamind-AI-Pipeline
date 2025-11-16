@@ -1,118 +1,82 @@
-AI-Powered Marketing Content Pipeline
+# NovaMind AI Content Pipeline  
+Built with care by **Aksha Karunaagaran** 💜
+#### Acccess here: https://novamindaipipeline.streamlit.app
 
-This project is something I built to show how an end-to-end marketing workflow can be automated with AI — from generating content to delivering it, logging performance, and learning from the results. The goal was to make something that feels like a real internal tool: fast, simple to use, and actually helpful.
+## Overview  
+NovaMind is an AI-powered marketing content pipeline that lets you generate a blog, convert it into persona-specific newsletters, revise content live, and run a simulated CRM campaign on HubSpot all inside one clean Streamlit app.
 
-Everything runs in Streamlit, so the reviewer can open the link and test the whole flow without installing anything.
+The whole flow mirrors how real AI-driven marketing teams work:  
+**Generate → Personalize → Send → Analyze → Optimize.**
 
-⸻
+---
 
-How to Use the App
-	1.	Open the Streamlit link.
-	2.	Pick a topic.
-	3.	Generate a full blog + tailored persona newsletters.
-	4.	Review or revise the content.
-	5.	Run a simulated CRM campaign and see performance metrics update in real time.
-	6.	View optimization suggestions (AI-powered).
+## Features  
 
-I designed it so the entire workflow can be tested in under a minute.
+### AI Blog Generator  
+- Auto-creates a structured outline  
+- Produces a clean 400–600 word blog draft  
+- No markdown fences or messy formatting  
 
-⸻
+### Persona Newsletters  
+Each persona gets a unique angle based on their needs:  
+- **Creative Director**  
+- **Operations Lead**  
+- **Freelancer**  
 
-What the System Does
+Content aligns with pain points and goals for each user type.
 
-1. Blog Generation
+### Revision Engine  
+- Add a natural-language instruction  
+- GPT rewrites the newsletter instantly  
+- Updated text feeds back into the pipeline  
 
-The app takes a topic and builds:
-	•	a clean outline
-	•	a 400–600 word blog draft
-	•	readability metrics
-I wanted the content to feel structured and easy to evaluate, not just “AI rambling.”
+### Campaign Runner  
+- Creates or updates CRM contacts  
+- Simulates newsletter send with engagement metrics  
+- Logs all results locally  
+- Supports optional HubSpot custom-object logging  
 
-2. Persona-Based Newsletters
+### Optimization Layer  
+After the send, the system recommends:  
+- Stronger subject lines  
+- High-performing future blog topics  
+- Content strategy adjustments  
 
-Each newsletter is adjusted based on persona pain points and goals:
-	•	Creative Director
-	•	Ops Lead
-	•	Freelancer
+---
 
-They all stay consistent with the blog topic.
+## Tech Stack  
+- **Python + Streamlit**  
+- **OpenAI API (gpt-4o-mini)**  
+- **HubSpot CRM API (optional)**  
+- **textstat** for readability feedback  
+- **JSONL** for lightweight local logging  
 
-3. Revision Mode
+---
 
-You can tell the AI: “shorter,” “more formal,” “more energetic,” etc.
-It rewrites instantly — like a mini editorial assistant.
+## Assumptions  
+- Email sending is simulated (focus is on content + workflow).  
+- HubSpot integration is included, but optional for review.  
+- Contacts are mock personas used for demonstration.  
+- The reviewer can run the entire app through Streamlit Cloud using secure secrets.  
+- GPT responses are kept plain-text to ensure clean display.  
 
-4. CRM-Style Campaign Simulation
+---
 
-Running a campaign performs:
-	•	contact upsert
-	•	a simulated “send”
-	•	generation of open/click/unsubscribe rates
-	•	local logging
-	•	optional HubSpot custom object logging (if API key is added)
+## How to Run  
 
-I kept the CRM part realistic but not overly complex.
+### Streamlit Cloud (Recommended)  
+Just open the hosted link. https://novamindaipipeline.streamlit.app
+All keys are stored in Streamlit Secrets, so everything works instantly.
 
-5. Optimization Suggestions
+## Next Steps
+Replace simulated sends with a real provider (SendGrid or HubSpot Marketing Email API).
 
-After a campaign, the system recommends:
-	•	what topic to write about next
-	•	stronger email subject lines
-	•	which persona is performing best
-	•	how to adjust tone or structure
-
-This gives the assignment a “continuous improvement” cycle instead of a one-off output.
-
-6. Architecture Overview
-Streamlit Frontend
-        │
-        ▼
-Content Generator (OpenAI)
-        │
-        ▼
-Persona Newsletters
-        │
-        ▼
-CRM Campaign Engine
-   • contact mgmt
-   • simulated email send
-   • engagement metrics
-   • logs (local + optional HubSpot)
-        │
-        ▼
-AI Optimization Insights
-
-I tried to keep the architecture clean so it's easy to understand and test.
-7. Tools & APIs
-    •    Streamlit for the interface
-    •    OpenAI GPT-4o-mini for all content generation
-    •    HubSpot API (optional) for logging and associations
-    •    Python (requests, json, uuid, textstat)
+### Auto-Recurring Weekly Pipelines
+Enable scheduled weekly runs that automatically:
+- generate a topic
+- write a blog
+- create newsletters
+- run the campaign
+- log results
 
 
-8. Assumptions I Made
-    •    CRM sending is simulated (no real emails are sent).
-    •    HubSpot is optional — if a key isn’t provided, the pipeline still orks normally.
-    •    Contacts are mock examples (cdirector@example.com, etc.).
-    •    Metrics are probabilistic to reflect realistic campaign behavior.
-    •    The UI is designed to be simple, accessible, and easy to test.
-
-9. Why I Built It This Way
-
-I wanted to show a few things clearly:
-    •    I can design complete systems, not just isolated scripts.
-    •    I understand how real marketing pipelines work (content → persona targeting → delivery → logs → learning).
-    •    I can connect AI models with external APIs + UX in a way that feels like a real internal tool.
-    •    Most importantly: I wanted the reviewer to be able to open it and immediately use it.
-
-If you want, I can also make:
-
-10. Why I Built It This Way
-
-I wanted to show a few things clearly:
-    •    I can design complete systems, not just isolated scripts.
-    •    I understand how real marketing pipelines work (content → persona targeting → delivery → logs → learning).
-    •    I can connect AI models with external APIs + UX in a way that feels like a real internal tool.
-    •    Most importantly: I wanted the reviewer to be able to open it and immediately use it.
-
-If you want, I can also make:
