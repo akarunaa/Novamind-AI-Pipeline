@@ -54,7 +54,10 @@ if "campaign_results" not in st.session_state:
 # TITLE
 # -------------------------
 st.title("AI Content Generator + CRM Campaign Pipeline")
-
+st.markdown(
+    "<p style='color:#6c4bc1; font-size:16px; margin-top:-15px;'>by Aksha Karunaagaran</p>",
+    unsafe_allow_html=True
+)
 
 
 # ============================================================================
