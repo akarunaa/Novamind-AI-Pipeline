@@ -62,6 +62,28 @@ After the send, the system recommends:
 
 ---
 
+## Architecture Diagram
+flowchart TD
+
+    A[User Opens Streamlit App] --> B[Enter Blog Topic]
+    B --> C[OpenAI API - Generate Outline & Blog]
+    C --> D[OpenAI API - Generate Persona Newsletters]
+
+    D --> E[Streamlit UI - Persona Review & Revision]
+    E --> F[OpenAI API - Revision Mode]
+
+    F --> G[Run Campaign]
+    G --> H[Simulated Newsletter Send]
+
+    H --> I[Local Logging (JSONL)]
+
+    H --> J{HubSpot Logging Enabled?}
+    J -->|Yes| K[HubSpot API - Upsert Contact]
+    K --> L[HubSpot API - Create Campaign Log Entry]
+    L --> M[HubSpot API - Associate Log → Contact]
+    J -->|No| N[Skip HubSpot Logging]
+
+
 ## How to Run  
 
 ### Streamlit Cloud (Recommended)  
